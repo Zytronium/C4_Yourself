@@ -19,6 +19,7 @@ int main(void)
 		guess = atoi(input);
 	else
 	{
+		printf("not a number\n");
 		exit(EXIT_FAILURE);
 		/* something */
 	}
