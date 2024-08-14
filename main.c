@@ -16,7 +16,7 @@ int main(void)
 
 	printf("Guess a number between %d and %d.\n", INT_MAX, INT_MIN);
 	getline(&input, &size, stdin);
-	printf("%c", input[strlen(input)]);
+	input[strlen(input) - 1] = '\0';
 	printf("Your number: %s.\n", input);
 	if (isNumber(input))
 		guess = atoi(input);
