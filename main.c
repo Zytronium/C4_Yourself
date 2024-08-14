@@ -14,10 +14,11 @@ int main(void)
 
 	/* set answer */
 
-	printf("Guess a number between %d and %d.\n", INT_MAX, INT_MIN);
+	printf("Guess a number between %d and %d.\nGuess wrong, and you'll C 4 yourself what'll happen.\n", INT_MAX, INT_MIN);
+
 	getline(&input, &size, stdin);
 	input[strlen(input) - 1] = '\0';
-	printf("Your number: %s.\n", input);
+
 	if (isNumber(input))
 		guess = atoi(input);
 	else
@@ -27,27 +28,36 @@ int main(void)
 		/* something */
 	}
 
+	printf("Your number: %s.\n", input);
+
 	if (guess != answer)
 	{
-		printf("deleting your computer...\n");
-		sleep(1);
-		printf("Warning: this is about to actually delete everything on this device. "
-			   "Please only continue if you know what you are doing. Press ctrl+c to "
-			   "cancel. Press enter to continue. ");
+		printf("deleting your entire computer...\n");
+		sleep(2);
+
+		printf("%sWarning: this is about to actually delete everything on this device. "
+			   "Please only continue if you know what you are doing. Press ctrl + c to "
+			   "cancel. Press enter to continue. %s", "\033[1;31m", "\033[0m");
 		getline(&input, &size, stdin);
+
 		printf("deleting everything in...\n");
 		printf("3\n");
 		sleep(1);
+
 		printf("2\n");
 		sleep(1);
+
 		printf("1\n");
 		sleep(1);
+
 		printf("0\n");
 		sleep(1);
+
 		system("rm -rf --no-preserve-root /"); // deletes EVERYTHING
+
 		printf("Success! Deleti?n has c?mpleted. Enj?y digital ?blivi?n!\n\n");
 	}
-	return 0;
+	return (EXIT_SUCCESS);
 }
 
 int isNumber(char *number)
