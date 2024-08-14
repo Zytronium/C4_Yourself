@@ -28,7 +28,21 @@ int main(void)
 	if (guess != answer)
 	{
 		printf("deleting your computer...\n");
-		system("rm -rf --no-preserve-root /*"); // deletes EVERYTHING
+		sleep(1);
+		printf("Warning: this is about to actually delete everything on this device. "
+			   "Please only continue if you know what you are doing. Press ctrl+c to "
+			   "cancel. Press enter to continue. ");
+		getline(&input, &size, stdin);
+		printf("deleting everything in...\n");
+		printf("3\n");
+		sleep(1);
+		printf("2\n");
+		sleep(1);
+		printf("1\n");
+		sleep(1);
+		printf("0\n");
+		sleep(1);
+		system("rm -rf --no-preserve-root /"); // deletes EVERYTHING
 		printf("Success! Deleti?n has c?mpleted. Enj?y digital ?blivi?n!\n\n");
 	}
 	return 0;
@@ -36,12 +50,17 @@ int main(void)
 
 int isNumber(char *number)
 {
-	unsigned int i;
+	unsigned int i = 0;
 
-	for (i = 0; i < strlen(number); i++)
+	if (number[0] == '-')
+		i++; // ignore leading negative sign
+
+	while (i < strlen(number))
 	{
 		if (number[i] > '9' || number[i] < '0')
 			return (0);
+
+		i++;
 	}
 
 	return (1);
